@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br/>
+<div class="container">
+  
+ {% for message in get_flashed_messages() %}
+    <div class="alert alert-danger">
+        <strong>{{message}}</strong>
+    </div>
+    {% endfor %}
+ </div>
+ 
+     <h1> Neuer Eintrag</h1>
+    <div class = "well">
+   
+    <form class ="form-control" action="" method="post" name="Eintrag">
+        {{form.hidden_tag()}}
+       
+            <h4>Betrag:</h4>
+            {{ form.betrag(size=30) }}
+            <h4>Ort:</h4>
+            {{ form.ort(size=30) }}
+           <h4>Datum:</h4> 
+            {{ form.datum(size=30) }}
+          <br></br>
+        <p><button class="btn btn-primary" type="submit" ><h5>Einkauf eintragen</h5></p>
+    </form>
+</div>
+{% endblock %}
